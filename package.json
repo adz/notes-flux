@@ -1,0 +1,29 @@
+{
+  "name": "notes-flux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigmarksmith/notes-flux.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/craigmarksmith/notes-flux/issues"
+  },
+  "homepage": "https://github.com/craigmarksmith/notes-flux#readme",
+  "dependencies": {
+    "babel-core": "^6.7.6",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "flux": "^2.1.1",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "webpack": "^1.12.15"
+  }
+}
