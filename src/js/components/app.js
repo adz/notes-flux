@@ -1,6 +1,7 @@
 import React from 'react'
 import AppActions from '../actions/app-actions'
 import AppStore from '../stores/app-stores'
+import List from './list'
 
 class App extends React.Component {
 
@@ -29,26 +30,22 @@ class App extends React.Component {
     AppActions.addNote(newNote)
   }
 
-  buildList(){
-    return this.state.currentList.map((item, i) => {
-      return (
-        <li key={i}>{item}</li>
-      )
-    })
-  }
-
   render(){
     return(
       <div>
         <h1>Todo List</h1>
         <input type="text" placeholder="Add New Note" ref={(ref) => this.setRef(ref)} />
         <button
+          type="button"
           onClick={this.handleSubmit.bind(this)}>
           Add to list
         </button>
-        <ul>
-          {this.buildList()}
-        </ul>
+        <button
+          type="button"
+          onClick={AppActions.getNotes.bind(null)}>
+            API CALL
+        </button>
+        <List />
       </div>
     )
   }

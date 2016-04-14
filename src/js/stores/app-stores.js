@@ -4,7 +4,7 @@ import { EventEmitter } from 'events';
 
 const CHANGE_EVENT = 'change';
 
-var _list = [1,2,3,4];
+var _list = [];
 
 const AppStore = Object.assign(EventEmitter.prototype, {
   emitChange(){
@@ -25,6 +25,19 @@ const AppStore = Object.assign(EventEmitter.prototype, {
       case AppConstants.ADD_NOTE:
         _list.push(action.note);
         break;
+
+
+      case AppConstants.GET_NOTES_RESPONSE:
+        console.log("HERE - API CALL GET_NOTES_RESPONSE")
+        // Construct the new todo string
+        var newListItem = action.response.results[0]
+
+        // Add the new todo to the list
+        _list.push(newListItem);
+        TodoStore.emit(CHANGE_EVENT);
+        break;
+
+
     }
     AppStore.emitChange();
   })
