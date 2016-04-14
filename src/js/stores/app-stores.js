@@ -20,7 +20,6 @@ const AppStore = Object.assign(EventEmitter.prototype, {
     return _list;
   },
   dispatcherIndex: register( function( action ){
-
     switch(action.actionType){
       case AppConstants.ADD_NOTE:
         _list.push(action.note);
@@ -28,13 +27,11 @@ const AppStore = Object.assign(EventEmitter.prototype, {
 
 
       case AppConstants.GET_NOTES_RESPONSE:
-        console.log("HERE - API CALL GET_NOTES_RESPONSE")
-        // Construct the new todo string
-        var newListItem = action.response.results[0]
+        let newListItem = action.response[0].email
 
         // Add the new todo to the list
         _list.push(newListItem);
-        TodoStore.emit(CHANGE_EVENT);
+        // TodoStore.emit(CHANGE_EVENT);
         break;
 
 

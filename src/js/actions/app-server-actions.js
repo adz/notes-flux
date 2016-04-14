@@ -4,7 +4,7 @@ import { dispatch, register } from '../dispatchers/app-dispatcher';
 export default {
   receiveList(response){
     dispatch({
-      actionType: AppConstants.GET_LIST_RESPONSE, response
+      actionType: AppConstants.GET_NOTES_RESPONSE, response
     })
   }
 
