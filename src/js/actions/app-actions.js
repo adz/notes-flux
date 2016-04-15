@@ -14,7 +14,7 @@ export default {
       actionType: AppConstants.GET_NOTES
     });
 
-    API.get();
+    API.getNotes().then(ServerActions.receiveList)
   }
 
 }
