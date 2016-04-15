@@ -42,7 +42,7 @@ class App extends React.Component {
           onClick={this.handleSubmit.bind(this)}>
           Add to list
         </button>
-        <List />
+        <List items={this.state.currentList}/>
       </div>
     )
   }
