@@ -4,18 +4,10 @@ import $ from 'jquery'
 export default {
   get(){
     new Promise((resolve, reject) => {
-      $.getJSON('http://api.randomuser.me')
+      $.getJSON('http://localhost:3000/notes')
         .then((response) => {
-          ServerActions.receiveList(response.results);
+          ServerActions.receiveList(response);
         })
     })
   }
 }
-
-
-    // return Request.get('http://api.randomuser.me/').set('Accept', 'application/json').end((err, response) => {
-    //     if (err) return console.error(err);
-    //     console.log(response)
-    //     ServerActions.receiveList(response.body);
-    //   }
-    // );

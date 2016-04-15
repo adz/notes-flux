@@ -25,16 +25,11 @@ const AppStore = Object.assign(EventEmitter.prototype, {
         _list.push(action.note);
         break;
 
-
       case AppConstants.GET_NOTES_RESPONSE:
-        let newListItem = action.response[0].email
-
-        // Add the new todo to the list
-        _list.push(newListItem);
-        // TodoStore.emit(CHANGE_EVENT);
+        action.response.map((item, key) => {
+          _list.push(item.note);
+        })
         break;
-
-
     }
     AppStore.emitChange();
   })

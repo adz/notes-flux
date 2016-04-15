@@ -13,6 +13,7 @@ class App extends React.Component {
   }
   componentWillMount(){
     AppStore.addChangeListener( this._onChange )
+    AppActions.getNotes()
   }
   componentWillUnmount(){
     AppStore.removeChangeListener( this._onChange )
@@ -40,11 +41,6 @@ class App extends React.Component {
           type="button"
           onClick={this.handleSubmit.bind(this)}>
           Add to list
-        </button>
-        <button
-          type="button"
-          onClick={AppActions.getNotes.bind(null)}>
-            API CALL
         </button>
         <List />
       </div>
