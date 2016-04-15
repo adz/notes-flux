@@ -1,6 +1,7 @@
 import { dispatch, register } from '../dispatchers/app-dispatcher';
 import AppConstants from '../constants/app-constants';
 import { EventEmitter } from 'events';
+import API from '../utils/api'
 
 const CHANGE_EVENT = 'change';
 
@@ -22,6 +23,7 @@ const AppStore = Object.assign(EventEmitter.prototype, {
   dispatcherIndex: register( function( action ){
     switch(action.actionType){
       case AppConstants.ADD_NOTE:
+        API.save({note: action.note})
         _list.push(action.note);
         break;
 

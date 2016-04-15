@@ -9,5 +9,15 @@ export default {
           ServerActions.receiveList(response);
         })
     })
+  },
+  save(newItem){
+    $.ajax({
+      method: "POST",
+      url: 'http://localhost:3000/notes',
+      data: {note: newItem}
+    }).done(() => {
+      console.log("DONE")
+    })
+
   }
 }
