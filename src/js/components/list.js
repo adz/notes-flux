@@ -1,20 +1,14 @@
 import React from 'react';
 import AppStore from '../stores/app-stores';
 
-class List extends React.Component {
-
-  render(){
-    const { items } = this.props // destructure out from props
-    return (
-      <ul>
-        {items.map(this.buildItem)}
-      </ul>
-    )
-  }
-
-  buildItem (item, i) {
-    return <li key={i}>{item}</li>
-  }
-}
+// stateless react components are simple functions that just get passed props
+// here i destructure it directly to get out items
+const List = ({ items }) => (
+  <ul>
+    {items.map((item, i) => (
+      <li key={i}>{item}</li>
+    )}
+  </ul>
+)
 
 export default List;
